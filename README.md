@@ -1,6 +1,15 @@
 ###HTML_builder###
 This is a PHP library that dynamicaly generates HTML tags, it efficient in simple webpages opposed to major complex websites where templates are most appropriate.
 
+Include the init file first
+
+```
+#!php
+
+require_once("HTML_builder/init.php");
+//replqce the HTML_builder with your path
+```
+
 ##HTML_tag class##
 This is the main class which has *instantiate* method that generates a tag object.
 The *instantiate* method takes two parameters, the HTML tag name and the tag's attributes (eg id, class, style etc). There you have no attributes then you should provide an empty array.
@@ -124,6 +133,43 @@ echo $audio->build();
 //display the html
 
 
+```
+
+###FULL EXAMPLE:###
+
+You should probably copy and paste this code, change the sources and run it. You will have to download the library first
+
+
+```
+#!php
+
+require_once("HTML_builder/lib/init.php");
+
+$div = HTML_tag::instantiate("DIV",array("style"=>"text-align:center;width:100%;height:100%;background:#eee"));
+//construct video
+$video = HTML_video::instantiate('video/mp4',array("controls","width"=>"600px","style"=>"padding:10px;box-shadow:2px 6px 7px -3px #777;background:white"));
+$video->source("path/to/video/file.mp4");
+$video->addContent("The video is not supported in this browser");
+$div->pushChild($video); //add video
+
+$audio = HTML_audio::instantiate('audio/mpeg');
+$audio->source("path/to/audio/file.mp3");
+
+//uncomment the line below to view the audio
+//$div->pushChild($audio);
+
+$body = HTML_tag::instantiate("body",array());
+$body->pushChild($div);
+
+$html = new mainHandler(true);
+$html->setTitle("Video");
+$html->addTag($body);
+
+//echo $html->build();
+$html->dump("testing_html_builder.html");
+
+header("Location:testing_html_builder.html");
+//redirect to the newly created file
 ```
 
 **Note:**
