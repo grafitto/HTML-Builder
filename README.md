@@ -9,6 +9,33 @@ Include the init file first
 require_once("HTML_builder/init.php");
 //replqce the HTML_builder with your path
 ```
+##Formatter##
+
+Before we move to the main classes you can format texts using the library, simple formats i.e bold, italics, underline a text
+
+Example:
+
+
+```
+#!php
+
+global $formatter;
+$f =& $formatter;
+
+$txt = "This is a test text";
+
+$btxt = f::b($txt);
+//$btxt is now bold
+
+$itxt = f::i($txt);
+//$itxt is now italic
+
+$utxt = f::u($txt);
+//utxt is now underlined
+
+$butxt = f::b(f::u($txt));
+$butxt is now bold and underlined
+```
 
 ##HTML_tag class##
 This is the main class which has *instantiate* method that generates a tag object.
