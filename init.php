@@ -15,6 +15,7 @@ DEFINE('EXTENSIONS',ROOT.DS."extensions");
 require_once(CORE.DS."HTML_tag.php");
 require_once(CORE.DS."selfClose.php");
 require_once(CORE.DS."Tag_handler.php");
+require_once(CORE.DS."formatter.php");
 
 require_once(INTERFACES.DS."HTML_tag_interface.php");
 require_once(INTERFACES.DS."HTML_tag_iterator.php");
