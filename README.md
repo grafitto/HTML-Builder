@@ -1,4 +1,4 @@
-###HTML_builder###
+### HTML_builder ###
 This is a PHP library that dynamicaly generates HTML tags, it efficient in simple webpages opposed to major complex websites where templates are most appropriate.
 
 Include the init file first
@@ -9,7 +9,7 @@ Include the init file first
 require_once("HTML_builder/init.php");
 //replqce the HTML_builder with your path
 ```
-##Formatter##
+## Formatter ##
 
 Before we move to the main classes you can format texts using the library, simple formats i.e bold, italics, underline a text
 
@@ -37,7 +37,7 @@ $butxt = f::b(f::u($txt));
 $butxt is now bold and underlined
 ```
 
-##HTML_tag class##
+## HTML_tag class ##
 This is the main class which has *instantiate* method that generates a tag object.
 The *instantiate* method takes two parameters, the HTML tag name and the tag's attributes (eg id, class, style etc). There you have no attributes then you should provide an empty array.
 The methods will be demonstrated in this example
@@ -83,7 +83,7 @@ $div->getParent();
 //returns the parent tag object
  
 ```
-##Class mainHandler##
+## Class mainHandler ##
 
 This class is used to instantiate html, head, link, title tags. 
 Example:
@@ -110,7 +110,7 @@ echo $html->build();
 $html->dump("path/to/dump/file.html");
 //this dumps the content to a file, it is created if it doesn't exist
 ```
-###Extensions###
+### Extensions ###
 
 1.**Video.**
 
@@ -162,7 +162,7 @@ echo $audio->build();
 
 ```
 
-###FULL EXAMPLE:###
+### FULL EXAMPLE: ###
 
 You should probably copy and paste this code, change the sources and run it. You will have to download the library first
 
