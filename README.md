@@ -3,9 +3,7 @@ This is a PHP library that dynamicaly generates HTML tags, it efficient in simpl
 
 Include the init file first
 
-```
-#!php
-
+```php
 require_once("HTML_builder/init.php");
 //replqce the HTML_builder with your path
 ```
@@ -16,9 +14,7 @@ Before we move to the main classes you can format texts using the library, simpl
 Example:
 
 
-```
-#!php
-
+```php
 global $formatter;
 $f =& $formatter;
 
@@ -43,8 +39,7 @@ The *instantiate* method takes two parameters, the HTML tag name and the tag's a
 The methods will be demonstrated in this example
 Example:
 
-```
-#!php
+```php
 $div = HTML_tag::instantiate("div",array());
 //creates a $div tag object
 
@@ -81,16 +76,13 @@ $div2->getChildPrev();
 
 $div->getParent();
 //returns the parent tag object
- 
 ```
 ## Class mainHandler ##
 
 This class is used to instantiate html, head, link, title tags. 
 Example:
 
-```
-#!php
-
+```php
 $html = new mainHandler(true);
 //creates a html tag, the parameter must be set to true, if it isnt then the
 //above listed tags will not be generated
@@ -118,9 +110,7 @@ This works the same way as the HTML_tag
 
 Example:
 
-```
-#!php
-
+```php
 $video = HTML_video::instantiate("video/mp4",array("controls","width"="480px"));
 //this creates a video tag, the second parameter is optional which will
 //load the defaults i.e. controls width="480px"
@@ -143,9 +133,7 @@ This works the same as the video extension
 Example:
 
 
-```
-#!php
-
+```php
 $audio = HTML_audio::instantiate("audio/mpeg",array("controls","width"="480px"));
 //this creates a audio tag, the second parameter is optional which will
 //load the defaults i.e. controls width="480px"
@@ -158,8 +146,6 @@ $audio->addContent("This format is not suported by your browser");
 
 echo $audio->build();
 //display the html
-
-
 ```
 
 ### FULL EXAMPLE: ###
@@ -167,9 +153,7 @@ echo $audio->build();
 You should probably copy and paste this code, change the sources and run it. You will have to download the library first
 
 
-```
-#!php
-
+```php
 require_once("HTML_builder/lib/init.php");
 
 $div = HTML_tag::instantiate("DIV",array("style"=>"text-align:center;width:100%;height:100%;background:#eee"));
